@@ -14,22 +14,6 @@
 </head>
 
 <body>
-
-    <!--
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">REGISTRO DE DATOS GENERALES</a>
-        </div>
-    </nav>
-
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Alumnos de Nuevo Ingreso</a>
-            <a class="navbar-brand" href="#">(Enero 2022)</a>
-        </div>
-    </nav>
-    -->
-
     <div class="container" style="background-color:blue;">
         <div class="text-center" style="color: white;">
             <h1>REGISTRO DE DATOS GENERALES</h1>
@@ -39,25 +23,10 @@
     </div>
 
 
-    <!--section class="d-flex justify-content-center"-->
-    <div class="container"> <br>
+    <div class="container-fluid"> <br>
         <form action="" class="form-horizontal">
             <fieldset class="border p-2">
                 <legend class="text-primary"> Identidad</legend>
-
-                <!--
-                <legend class="text-primary"> Identidad</legend>
-
-                <div class="mb-3">
-                    <label for="boleta" class="col-sm-2 col-form-label"> No. de boleta: </label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" id="boleta" name="boleta" maxlength="10" size="10"
-                            placeholder="20XXXXXXXX">
-                    </div>
-                </div>
-            -->
-
-
 
                 <div class="mb-3 row">
                     <div class="col-auto">
@@ -72,14 +41,14 @@
 
                 <div class="mb-3 row">
                     <div class="col-auto">
-                        <label class="col-form-label">Nombre: </label>    
+                        <label class="col-form-label">Nombre: </label>
                     </div>
 
-                    <div class="col-auto">
+                    <div class="col-auto mb-1">
                         <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre(s)"
                             maxlength="20" size="20">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto mb-1">
                         <input class="form-control" type="text" id="apePaterno" name="apePaterno"
                             placeholder="Apellido paterno" maxlength="20" size="20">
                     </div>
@@ -89,226 +58,222 @@
                     </div>
                 </div>
 
-                <!--
-                <div class="mb-3">
-                    <label for="nombre" class="col-sm-2 col-form-label"> Nombre(s): </label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" id="nombre" name="nombre" maxlength="15" size="10"
-                            placeholder="Mar&iacute;a Guadalupe">
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label for="fechaNac" class="col-form-label">Fecha de Nacimiento:</label>
                     </div>
-                </div>
-            -->
-
-                <div class="mb-3">
-                    <label for="fechaNac" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-                    <div class="col-sm-10">
+                    <div class="col-auto">
                         <input class="form-control" type="date" id="fechaNac" name="fechaNac">
                     </div>
                 </div>
 
-
-                <div class="mb-3">
-                    <label for="genero" class="col-sm-2 col-form-label"> G&eacute;nero: </label>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="genero" id="fem">
-                        <label class="form-check-label" for="fem">Femenino</label>
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label for="genero" class="col-sm-2 col-form-label">G&eacute;nero:</label>
                     </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="genero" id="mas">
-                        <label class="form-check-label" for="fem">Masculino</label>
+                    <div class="col-auto mt-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="genero" id="fem">
+                            <label class="form-check-label" for="fem">Femenino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="genero" id="mas">
+                            <label class="form-check-label" for="fem">Masculino</label>
+                        </div>
                     </div>
                 </div>
 
-
-                <div class="mb-3">
-                    <label for="curp" class="col-sm-2 col-form-label">CURP: </label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" id="curp" name="curp" maxlength="18" size="18"
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label for="curp" class="col-form-label">CURP: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input class="form-control" type="text" id="curp" name="curp" maxlength="18" size="19"
                             style="text-transform:uppercase" placeholder="XXXXXXXXXX">
                     </div>
                 </div>
 
             </fieldset>
 
-            <br><br><br>
+            <br>
 
-            <fieldset>
-                <legend class="text-primary">Contacto:</legend>
+            <fieldset class="border p-2">
+                <legend class="text-primary">Contacto</legend>
 
-                <div class="mb-3">
-                    <label for="dir1" class="col-sm-2 col-form-label">Calle y N&uacute;mero: </label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" id="dir1" name="calle">
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label for="dir1" class="col-form-label">Calle y N&uacute;mero:</label>
                     </div>
-                </div>
-
-
-                <div class="mb-3">
-                    <label for="dir2" class="col-sm-2 col-form-label">Colonia: </label>
-                    <div class="col-sm-10">
+                    <div class="col-auto mb-3">
+                        <input class="form-control" type="text" id="dir1" name="calle" maxlength="40" size="40">
+                    </div>
+                    <div class="col-auto">
+                        <label for="dir2" class="col-form-label">Colonia:</label>
+                    </div>
+                    <div class="col-auto">
                         <input class="form-control" type="text" id="dir2" name="colonia">
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="dir3" class="col-sm-2 col-form-label">Alcald&iacute;a: </label>
-                    <select class="form-select form-select-sm" id="dir3" name="alcaldia">
-                        <option value="sel" selected>-Seleccione uno-</option>
-                        <option value="alvaro">&Aacute;lvaro Obreg&oacute;n</option>
-                        <option value="azcapotzalco">Azcapotzalco</option>
-                        <option value="benito">Benito Ju&aacute;rez</option>
-                        <option value="coyoacan"> Coyoac&aacute;n</option>
-                        <option value="cuajimalpa">Cuajimalpa de Morelos</option>
-                        <option value="cuauhtemoc">Cuauht&eacute;moc</option>
-                        <option value="gustavo">Gustavo A. Madero</option>
-                        <option value="iztacalco">Iztacalco</option>
-                        <option value="iztapalapa">Iztapalapa</option>
-                        <option value="magdalena">La Magdalena Contreras</option>
-                        <option value="miguel">Miguel Hidalgo</option>
-                        <option value="milpa">Milpa Alta</option>
-                        <option value="tlalpan">Tlalpan</option>
-                        <option value="tlahuac">Tl&aacute;huac</option>
-                        <option value="venustiano">Venustiano Carranza</option>
-                        <option value="xochimilco">Xochimilco</option>
-                    </select>
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label for="dir3" class="col-sm-2 col-form-label">Alcald&iacute;a: </label>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <select class="form-select form-select" id="dir3" name="alcaldia">
+                            <option value="sel" selected>-Seleccione uno-</option>
+                            <option value="alvaro">&Aacute;lvaro Obreg&oacute;n</option>
+                            <option value="azcapotzalco">Azcapotzalco</option>
+                            <option value="benito">Benito Ju&aacute;rez</option>
+                            <option value="coyoacan"> Coyoac&aacute;n</option>
+                            <option value="cuajimalpa">Cuajimalpa de Morelos</option>
+                            <option value="cuauhtemoc">Cuauht&eacute;moc</option>
+                            <option value="gustavo">Gustavo A. Madero</option>
+                            <option value="iztacalco">Iztacalco</option>
+                            <option value="iztapalapa">Iztapalapa</option>
+                            <option value="magdalena">La Magdalena Contreras</option>
+                            <option value="miguel">Miguel Hidalgo</option>
+                            <option value="milpa">Milpa Alta</option>
+                            <option value="tlalpan">Tlalpan</option>
+                            <option value="tlahuac">Tl&aacute;huac</option>
+                            <option value="venustiano">Venustiano Carranza</option>
+                            <option value="xochimilco">Xochimilco</option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="col-form-label" for="dir4">C&oacute;digo Postal:</label>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <input type="text" class="form-control" id="dir4" name="codigop" maxlength="5" size="5">
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="col-form-label" for="dir5">T&eacute;lefono o celular:</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="tel" class="form-control" id="dir5" name="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                            placeholder="Ej. (777)129-3456" maxlength="10" size="11">
+                    </div>
+
                 </div>
 
-
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="dir4">C&oacute;digo Postal: </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="codigop" maxlength="5">
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label class="col-form-label" for="dir6">Correo electr&oacute;nico:</label>
+                    </div>
+                    <div class="col-auto">
+                        <input class="form-control" type="email" id="dir6" name="correo" pattern=".+@gmail.com"
+                            maxlength="30" size="30" placeholder="name@gmail.com">
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="dir5">T&eacute;lefono o celular:</label>
-                    <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="dir5" name="tel"
-                            pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" placeholder="Ej. (777)129-3456">
-                    </div>
-                </div>
-
-
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="dir6">Correo electr&oacute;nico:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" id="dir6" name="correo" pattern=".+@gmail\.com"
-                            size="30" placeholder="xxxxxx@gmail.com">
-                    </div>
-                </div>
             </fieldset>
 
-            <br><br><br>
+            <br>
 
-            <fieldset>
-                <legend class="text-primary">Procendencia</legend>
+            <fieldset class="border p-2">
+                <legend class="text-primary">Procedencia</legend>
 
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="escuela_procedencia">Escuela de procedencia: </label>
-                    <select class="form-select form-select-sm" id="escuela_procedencia" name="escuela_procedencia">
-                        <option value="selec_op" selected>--Elija una opción--</option>
-                        <option value="Cecyt_1">CECyT #1 “González Vázquez Vega”</option>
-                        <option value="Cecyt_2">CECyT #2 "Miguel Bernard"</option>
-                        <option value="Cecyt_3">CECyT #3 "Estanislao Ramírez Ruiz"</option>
-                        <option value="Cecyt_4">CECyT #4 "Lázaro Cárdenas"</option>
-                        <option value="Cecyt_5">CECyT #5 "Benito Juárez García"</option>
-                        <option value="Cecyt_6">CECyT #6 "Miguel Othón de Mendizábal"</option>
-                        <option value="Cecyt_7">CECyT #7 "Cuauhtémoc"</option>
-                        <option value="Cecyt_8">CECyT #8 "Narciso Bassols García"</option>
-                        <option value="Cecyt_9">CECyT #9 "Juan de Dios Bátiz"</option>
-                        <option value="Cecyt_10">CECyT #10 "Carlos Vallejo Márquez"</option>
-                        <option value="Cecyt_11">CECyT #11 "Wilfrido Massieu Pérez"</option>
-                        <option value="Cecyt_12">CECyT #12 "José María Morelos y Pavón"</option>
-                        <option value="Cecyt_13">CECyT #13 "Ricardo Flores Magón"</option>
-                        <option value="Cecyt_14">CECyT #14 "Luis Enrique Erro"</option>
-                        <option value="Cecyt_15">CECyT #15 "Diódoro Antúnez Echegaray"</option>
-                        <option value="Cecyt_16">CECyT #16 "Hidalgo"</option>
-                        <option value="Cecyt_17">CECyT #17 "León, Guanajuato"</option>
-                        <option value="Cecyt_18">CECyT #18 "Zacatecas"</option>
-                        <option value="Cecyt_19">CECyT #19 "Leona Vicario"</option>
-                        <option value="Cet_1">CET #1 "Walter Cross Buchanan"</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label class="col-form-label" for="escuela_procedencia">Escuela de procedencia:
+                        </label>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <select class="form-select" id="escuela_procedencia" name="escuela_procedencia">
+                            <option value="selec_op" selected>--Elija una opción--</option>
+                            <option value="Cecyt_1">CECyT #1 “González Vázquez Vega”</option>
+                            <option value="Cecyt_2">CECyT #2 "Miguel Bernard"</option>
+                            <option value="Cecyt_3">CECyT #3 "Estanislao Ramírez Ruiz"</option>
+                            <option value="Cecyt_4">CECyT #4 "Lázaro Cárdenas"</option>
+                            <option value="Cecyt_5">CECyT #5 "Benito Juárez García"</option>
+                            <option value="Cecyt_6">CECyT #6 "Miguel Othón de Mendizábal"</option>
+                            <option value="Cecyt_7">CECyT #7 "Cuauhtémoc"</option>
+                            <option value="Cecyt_8">CECyT #8 "Narciso Bassols García"</option>
+                            <option value="Cecyt_9">CECyT #9 "Juan de Dios Bátiz"</option>
+                            <option value="Cecyt_10">CECyT #10 "Carlos Vallejo Márquez"</option>
+                            <option value="Cecyt_11">CECyT #11 "Wilfrido Massieu Pérez"</option>
+                            <option value="Cecyt_12">CECyT #12 "José María Morelos y Pavón"</option>
+                            <option value="Cecyt_13">CECyT #13 "Ricardo Flores Magón"</option>
+                            <option value="Cecyt_14">CECyT #14 "Luis Enrique Erro"</option>
+                            <option value="Cecyt_15">CECyT #15 "Diódoro Antúnez Echegaray"</option>
+                            <option value="Cecyt_16">CECyT #16 "Hidalgo"</option>
+                            <option value="Cecyt_17">CECyT #17 "León, Guanajuato"</option>
+                            <option value="Cecyt_18">CECyT #18 "Zacatecas"</option>
+                            <option value="Cecyt_19">CECyT #19 "Leona Vicario"</option>
+                            <option value="Cet_1">CET #1 "Walter Cross Buchanan"</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="col-form-label" for="entidadFed">Entidad Federativa de procedencia:
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select" id="entidadFed" name="entidadFed">
+                            <option value="selecciona" selected>-- Selecciona uno --</option>
+                            <option value="agu"> Aguascalientes </option>
+                            <option value="bcn"> Baja California </option>
+                            <option value="bcs"> Baja California Sur </option>
+                            <option value="camp"> Campeche </option>
+                            <option value="chis"> Chiapas </option>
+                            <option value="chih"> Chihuahua </option>
+                            <option value="cdmx"> Ciudad de M&eacute;xico </option>
+                            <option value="coah"> Coahuila </option>
+                            <option value="col"> Colima </option>
+                            <option value="dgop"> Durango </option>
+                            <option value="gto"> Guanajuato </option>
+                            <option value="gro"> Guerrero </option>
+                            <option value="hgo"> Hidalgo </option>
+                            <option value="jal"> Jalisco </option>
+                            <option value="edomex"> M&eacute;xico </option>
+                            <option value="mich"> Michoac&aacute;n </option>
+                            <option value="mor"> Morelos </option>
+                            <option value="nay"> Nayarit </option>
+                            <option value="nl"> Nuevo Le&oacute;n </option>
+                            <option value="oax"> Oaxaca </option>
+                            <option value="pue"> Puebla </option>
+                            <option value="qro"> Quer&eacute;taro </option>
+                            <option value="qroo"> Quintana Roo </option>
+                            <option value="slp"> San Luis Potos&iacute; </option>
+                            <option value="sin"> Sinaloa </option>
+                            <option value="son"> Sonora </option>
+                            <option value="tab"> Tabasco </option>
+                            <option value="tamps"> Tamaulipas </option>
+                            <option value="tlax"> Tlaxcala </option>
+                            <option value="ver"> Veracruz </option>
+                            <option value="yuc"> Yucat&aacute;n </option>
+                            <option value="zac"> Zacatecas </option>
+                        </select>
+                    </div>
                 </div>
 
-
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="entidadFed">Entidad Federativa de procedencia: </label>
-                    <select class="form-select form-select-sm" id="entidadFed" name="entidadFed">
-                        <option value="selecciona" selected>-- Selecciona uno --</option>
-                        <option value="agu"> Aguascalientes </option>
-                        <option value="bcn"> Baja California </option>
-                        <option value="bcs"> Baja California Sur </option>
-                        <option value="camp"> Campeche </option>
-                        <option value="chis"> Chiapas </option>
-                        <option value="chih"> Chihuahua </option>
-                        <option value="cdmx"> Ciudad de M&eacute;xico </option>
-                        <option value="coah"> Coahuila </option>
-                        <option value="col"> Colima </option>
-                        <option value="dgop"> Durango </option>
-                        <option value="gto"> Guanajuato </option>
-                        <option value="gro"> Guerrero </option>
-                        <option value="hgo"> Hidalgo </option>
-                        <option value="jal"> Jalisco </option>
-                        <option value="edomex"> M&eacute;xico </option>
-                        <option value="mich"> Michoac&aacute;n </option>
-                        <option value="mor"> Morelos </option>
-                        <option value="nay"> Nayarit </option>
-                        <option value="nl"> Nuevo Le&oacute;n </option>
-                        <option value="oax"> Oaxaca </option>
-                        <option value="pue"> Puebla </option>
-                        <option value="qro"> Quer&eacute;taro </option>
-                        <option value="qroo"> Quintana Roo </option>
-                        <option value="slp"> San Luis Potos&iacute; </option>
-                        <option value="sin"> Sinaloa </option>
-                        <option value="son"> Sonora </option>
-                        <option value="tab"> Tabasco </option>
-                        <option value="tamps"> Tamaulipas </option>
-                        <option value="tlax"> Tlaxcala </option>
-                        <option value="ver"> Veracruz </option>
-                        <option value="yuc"> Yucat&aacute;n </option>
-                        <option value="zac"> Zacatecas </option>
-                    </select>
-                </div>
-
-
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="promedio">Promedio: </label>
-                    <div class="col-sm-10">
+                <div class="mb-3 row">
+                    <div class="col-auto">
+                        <label class="col-form-label" for="promedio">Promedio: </label>
+                    </div>
+                    <div class="col-auto">
                         <input class="form-control" type="number" name="promedio" min="0" max="10" step="0.1">
                     </div>
-                </div>
 
-
-                <div class="mb-3">
-                    <label class="col-sm-2 col-form-label" for="n_opcion">ESCOM fue tu: </label>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="opcion" id="1opcion">
-                        <label class="form-check-label" for="1opcion">1ra opción</label>
+                    <div class="col-auto">
+                        <label class="col-form-label" for="n_opcion">ESCOM fue tu:</label>
                     </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="opcion" id="2opcion">
-                        <label class="form-check-label" for="2opcion"></label>2da opción</label>
+                    <div class="col-auto">
+                        <select class="form-select" id="n_opcion" name="opcion">
+                            <option value="1opcion">1ra opción</option>
+                            <option value="2opcion">2da opción</option>
+                            <option value="3opcion">3ra opción</option>
+                            <option value="4opcion">4ta opción</option>
+                        </select>
                     </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="opcion" id="3opcion">
-                        <label class="form-check-label" for="3opcion">3ra opción</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="opcion" id="4opcion">
-                        <label class="form-check-label" for="4opcion"></label>4da opción</label>
-                    </div>
-                </div>
 
             </fieldset>
 
+            <br>
 
             <div class="mb-3">
                 <input class="btn btn-primary position-relative" type="submit" value="Enviar">
@@ -318,9 +283,6 @@
         </form>
     </div>
     <!--/section-->
-
-
-
 </body>
 
 </html>
