@@ -112,3 +112,17 @@ function validarCorreo() {
         alert('Direccion correcta');
         return true;
 }
+
+
+function validarFormulario(){
+    validarBoleta(); 
+    //validarNombre(); 
+    //validarApeP(); 
+    //validarApeM(); 
+    //validarNacFecha(); 
+    //validarGenero(); 
+    //validarCurp(); 
+    //validarCalle(); 
+    //validarColonia(); 
+    //validarCorreo();
+}
