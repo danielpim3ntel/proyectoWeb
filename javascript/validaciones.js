@@ -99,6 +99,51 @@ function validarCurp() {
         return true;    
 }
 
+
+function validarCalle() {
+    var calle = document.getElementById('calle');
+    var filtro = /^[0-9a-zA-Z\s]+$/;
+
+    if (!filtro.test(calle.value)) {
+        alert('Por favor, ingresa una direccion valida');
+        calle.focus;
+        return false;
+    }
+    else
+        alert('Direccion correcta');
+        return true;
+}
+
+function validarColonia() {
+    var colonia = document.getElementById('colonia');
+    var filtro = /^[a-zA-Z\s]+$/;
+
+    if (!filtro.test(colonia.value)) {
+        alert('Por favor, ingresa una direccion valida');
+        colonia.focus;
+        return false;
+    }
+    else
+        alert('Direccion correcta');
+        return true;
+}
+
+function validarCodigoP() {
+    var codigop = document.getElementById('codigop');
+    var filtro = /^([0-9])+$/;
+
+    if (!filtro.test(codigop.value)) {
+        alert('Por favor, ingresa un correo válido');
+        codigop.focus;
+        return false;
+    }
+    else
+        alert('Direccion correcta');
+        return true;
+}
+
+
+
 function validarCorreo() {
     var correo = document.getElementById('correo');
     var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -114,15 +159,17 @@ function validarCorreo() {
 }
 
 
+
 function validarFormulario(){
     validarBoleta(); 
     validarNombre(); 
     validarApeP(); 
     validarApeM(); 
-    //validarNacFecha(); 
+    validarNacFecha(); 
     validarGenero(); 
     validarCurp(); 
-    //validarCalle(); 
-    //validarColonia(); 
+    validarCalle(); 
+    validarColonia(); 
+    validarCodigoP();
     validarCorreo();
 }
