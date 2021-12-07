@@ -106,25 +106,25 @@
 
                 <div class="mb-3 row">
                     <div class="col-auto">
-                        <label for="dir1" class="col-form-label">Calle y N&uacute;mero:</label>
+                        <label for="calle" class="col-form-label">Calle y N&uacute;mero:</label>
                     </div>
                     <div class="col-auto mb-3">
-                        <input class="form-control" type="text" id="dir1" name="calle" maxlength="40" size="40">
+                        <input class="form-control" type="text" id="calle" name="calle" maxlength="40" size="40">
                     </div>
                     <div class="col-auto">
-                        <label for="dir2" class="col-form-label">Colonia:</label>
+                        <label for="colonia" class="col-form-label">Colonia:</label>
                     </div>
                     <div class="col-auto">
-                        <input class="form-control" type="text" id="dir2" name="colonia">
+                        <input class="form-control" type="text" id="colonia" name="colonia">
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <div class="col-auto">
-                        <label for="dir3" class="col-sm-2 col-form-label">Alcald&iacute;a: </label>
+                        <label for="alcaldia" class="col-sm-2 col-form-label">Alcald&iacute;a: </label>
                     </div>
                     <div class="col-auto mb-3">
-                        <select class="form-select form-select" id="dir3" name="alcaldia">
+                        <select class="form-select form-select" id="alcaldia" name="alcaldia">
                             <option value="sel" selected>-Seleccione uno-</option>
                             <option value="alvaro">&Aacute;lvaro Obreg&oacute;n</option>
                             <option value="azcapotzalco">Azcapotzalco</option>
@@ -146,25 +146,25 @@
                     </div>
 
                     <div class="col-auto">
-                        <label class="col-form-label" for="dir4">C&oacute;digo Postal:</label>
+                        <label class="col-form-label" for="codigop">C&oacute;digo Postal:</label>
                     </div>
                     <div class="col-auto mb-3">
-                        <input type="text" class="form-control" id="dir4" name="codigop" maxlength="5" size="5">
+                        <input type="text" class="form-control" id="codigop" name="codigop" maxlength="6" size="6">
                     </div>
 
                     <div class="col-auto">
-                        <label class="col-form-label" for="dir5">T&eacute;lefono o celular:</label>
+                        <label class="col-form-label" for="telefono">T&eacute;lefono o celular:</label>
                     </div>
                     <div class="col-auto">
-                        <input type="tel" class="form-control" id="dir5" name="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                            placeholder="Ej. (777)129-3456" maxlength="10" size="11">
+                        <input type="tel" class="form-control" id="telefono" name="tel"
+                            placeholder="Ej. 551293456" maxlength="10" size="11">
                     </div>
 
                 </div>
 
                 <div class="mb-3 row">
                     <div class="col-auto">
-                        <label class="col-form-label" for="dir6">Correo electr&oacute;nico:</label>
+                        <label class="col-form-label" for="correo">Correo electr&oacute;nico:</label>
                     </div>
                     <div class="col-auto">
                         <input class="form-control" type="email" id="correo" name="correo" pattern=".+@gmail.com"
@@ -259,7 +259,7 @@
                         <label class="col-form-label" for="promedio">Promedio: </label>
                     </div>
                     <div class="col-auto mb-3">
-                        <input class="form-control" type="number" name="promedio" min="0" max="10" step="0.1">
+                        <input class="form-control" type="number" id="promedio" name="promedio" min="0" max="10" step="0.1">
                     </div>
 
                     <div class="col-auto">
@@ -279,7 +279,7 @@
             <br>
 
             <div class="mb-3">
-                <input class="btn btn-primary position-relative" type="submit" value="Enviar" onclick='validarFormulario();'><!--onclick='validarFormulario();'-->
+                <input class="btn btn-primary position-relative" type="submit" value="Enviar" onclick='validarFormulario();'>
                 <input class="btn btn-dark position-relative" type="reset" value="Limpiar">
             </div>
 

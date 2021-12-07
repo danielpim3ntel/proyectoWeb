@@ -53,9 +53,9 @@ function validarApeM() {
    //return true;    
 }
 
-function validarNacFecha() {
+ /*function validarNacFecha() {
     var nacFecha = document.getElementById('fechaNac');
-    var filtro = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/((1[0-9][0-9][0-9])|20(0[0-9]|1[0-9]|21))$/;
+    //var filtro = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/((1[0-9][0-9][0-9])|20(0[0-9]|1[0-9]|21))$/;
 
     if (!filtro.test(nacFecha.value)) {
         alert('Fecha de Nacimiento incorrecta. El formato de la fecha de nacimiento es dd/mm/yyyy');
@@ -64,8 +64,8 @@ function validarNacFecha() {
     }
     else
             alert('Fecha de Nacimiento válida');
-            return true;     
-}
+            return true;   
+}*/  
 
 
 function validarGenero(){
@@ -133,12 +133,12 @@ function validarCodigoP() {
     var filtro = /^([0-9])+$/;
 
     if (!filtro.test(codigop.value)) {
-        alert('Por favor, ingresa un correo válido');
+        alert('Por favor, ingresa un código postal válido');
         codigop.focus;
         return false;
     }
     else
-        alert('Direccion correcta');
+        alert('Código Postal correcto');
         return true;
 }
 
@@ -158,6 +158,33 @@ function validarCorreo() {
         return true;
 }
 
+function validarPromedio() {
+    var promedio = document.getElementById('promedio');
+    var filtro = /^([6-9].[0-9][0-9]|[6-9]|10)$/;
+
+    if (!filtro.test(promedio.value)) {
+        alert('El promedio solo puede contener 2 decimales');
+        promedio.focus;
+        return false;
+    }
+    else
+        alert('Promedio válido');
+        return true;
+}
+
+function validarTelefono() {
+    var telefono = document.getElementById('telefono');
+    var filtro = /^[0-9]{10}$/;
+
+    if (!filtro.test(telefono.value)) {
+        alert('El teléfono o celular debe ser de 10 dígitos.');
+        promedio.focus;
+        return false;
+    }
+    else
+        alert('Teléfono válido');
+        return true;
+}
 
 
 function validarFormulario(){
@@ -165,11 +192,13 @@ function validarFormulario(){
     validarNombre(); 
     validarApeP(); 
     validarApeM(); 
-    validarNacFecha(); 
+    //validarNacFecha(); 
     validarGenero(); 
     validarCurp(); 
     validarCalle(); 
     validarColonia(); 
     validarCodigoP();
+    validarTelefono();
     validarCorreo();
+    validarPromedio();
 }
