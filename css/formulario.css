@@ -1,0 +1,20 @@
+.formulario-input-error {
+	margin-top: 0.25rem;
+	font-size: 0.875em;
+	color: red;
+	text-align: center;
+	display: none;
+}
+
+.formulario_input-correcto {
+	margin-top: 0.25rem;
+	font-size: 0.875em;
+	color: red;
+	display: none;
+}
+
+.formulario-input-error-ver {
+	display: block;
+}
+
+
