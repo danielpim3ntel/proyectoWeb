@@ -8,7 +8,6 @@ const expresiones = {
     nombre: /[A-Z][a-z]+/,
     apeMaterno: /[A-Z][a-z]+/,
     apePaterno: /[A-Z][a-z]+/,
-    fechaNac: /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/((1[0-9][0-9][0-9])|20(0[0-9]|1[0-9]|21))$/,
     genero: document.getElementsByName('genero'),
     curp: /^[A-Z][A-Z][A-Z][A-Z][0-9][0-9](0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[01])[H|M](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z][A-Z][A-Z]([0-9]|[A-Z])[0-9]$/,
     calle: /^[0-9a-zA-Z\s]+$/,
@@ -28,7 +27,6 @@ const campos = {
     nombre: false,
     apeMaterno: false,
     apePaterno: false,
-    fechaNac: false,
     genero: false,
     curp: false,
     calle: false,
@@ -56,9 +54,6 @@ const validarFormulario = (e) => {
             break;
         case "apeMaterno":
             validarCampo(expresiones.apeMaterno, e.target, 'apeMaterno');
-            break;
-        case "fechaNac":
-            validarCampo(expresiones.fechaNac, e.target, 'fechaNac');
             break;
         case "genero":
             validarFormCheck(expresiones.genero, e.target, 'genero');
@@ -190,7 +185,6 @@ function checador() {
         campos.nombre &&
         campos.apeMaterno &&
         campos.apePaterno &&
-        campos.fechaNac &&
         campos.genero &&
         campos.curp &&
         campos.calle &&
@@ -229,7 +223,6 @@ function validarFormularioF() {
     validarCampo(expresiones.nombre, document.getElementsByName('nombre')[0], 'nombre');
     validarCampo(expresiones.apePaterno, document.getElementsByName('apePaterno')[0], 'apePaterno');
     validarCampo(expresiones.apeMaterno, document.getElementsByName('apeMaterno')[0], 'apeMaterno');
-    validarCampo(expresiones.fechaNac, document.getElementsByName('fechaNac')[0], 'fechaNac');
     validarFormCheck(expresiones.genero, document.getElementsByName('genero'), 'genero');
     validarCampo(expresiones.curp, document.getElementsByName('curp')[0], 'curp');
     validarCampo(expresiones.calle, document.getElementsByName('calle')[0], 'calle');
