@@ -225,23 +225,23 @@ formulario.addEventListener('submit', (e) => {
 
 
 function validarFormularioF() {
-    validarCampo(expresiones.boleta, document.getElementsByName('boleta'), 'boleta');
-    validarCampo(expresiones.nombre, document.getElementsByName('nombre'), 'nombre');
-    validarCampo(expresiones.apePaterno, document.getElementsByName('apePaterno'), 'apePaterno');
-    validarCampo(expresiones.apeMaterno, document.getElementsByName('apeMaterno'), 'apeMaterno');
-    validarCampo(expresiones.fechaNac, document.getElementsByName('fechaNac'), 'fechaNac');
+    validarCampo(expresiones.boleta, document.getElementsByName('boleta')[0], 'boleta');
+    validarCampo(expresiones.nombre, document.getElementsByName('nombre')[0], 'nombre');
+    validarCampo(expresiones.apePaterno, document.getElementsByName('apePaterno')[0], 'apePaterno');
+    validarCampo(expresiones.apeMaterno, document.getElementsByName('apeMaterno')[0], 'apeMaterno');
+    validarCampo(expresiones.fechaNac, document.getElementsByName('fechaNac')[0], 'fechaNac');
     validarFormCheck(expresiones.genero, document.getElementsByName('genero'), 'genero');
-    validarCampo(expresiones.curp, document.getElementsByName('curp'), 'curp');
-    validarCampo(expresiones.calle, document.getElementsByName('calle'), 'calle');
-    validarCampo(expresiones.colonia, document.getElementsByName('colonia'), 'colonia');
+    validarCampo(expresiones.curp, document.getElementsByName('curp')[0], 'curp');
+    validarCampo(expresiones.calle, document.getElementsByName('calle')[0], 'calle');
+    validarCampo(expresiones.colonia, document.getElementsByName('colonia')[0], 'colonia');
     validarFormSelect(expresiones.alcaldia, document.getElementsByName('alcaldia'), 'alcaldia');
-    validarCampo(expresiones.codigop, document.getElementsByName('codigop'), 'codigop');
-    validarCampo(expresiones.telefono, document.getElementsByName('telefono'), 'telefono');
-    validarCampo(expresiones.correo, document.getElementsByName('correo'), 'correo');
+    validarCampo(expresiones.codigop, document.getElementsByName('codigop')[0], 'codigop');
+    validarCampo(expresiones.telefono, document.getElementsByName('telefono')[0], 'telefono');
+    validarCampo(expresiones.correo, document.getElementsByName('correo')[0], 'correo');
     validarFormSelect(expresiones.escuelaProcedencia, document.getElementsByName('escuelaProcedencia'), 'escuelaProcedencia');
-    validarCampo(expresiones.escuelaProcedenciaOtro, document.getElementsByName('escuelaProcedenciaOtro'), 'escuelaProcedenciaOtro');
+    validarCampo(expresiones.escuelaProcedenciaOtro, document.getElementsByName('escuelaProcedenciaOtro')[0], 'escuelaProcedenciaOtro');
     validarFormSelect(expresiones.entidadProcedencia, document.getElementsByName('entidadProcedencia'), 'entidadProcedencia');
-    validarCampo(expresiones.promedio, document.getElementsByName('promedio'), 'promedio');
+    validarCampo(expresiones.promedio, document.getElementsByName('promedio')[0], 'promedio');
 }
 
 /*function validarBoleta() {
