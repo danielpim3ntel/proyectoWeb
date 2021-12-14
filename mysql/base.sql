@@ -19,6 +19,10 @@ USE `baseProyecto`;
 /*Table structure for table `alumno` */
 
 DROP TABLE IF EXISTS `alumno`;
+DROP TABLE IF EXISTS `horariosExamen`;
+DROP TABLE IF EXISTS `asignacionExamen`;
+DROP TABLE IF EXISTS `laboratorios`;
+DROP TABLE IF EXISTS `grupos`;
 
 CREATE TABLE `alumno` (
   `boleta` varchar(10) NOT NULL,
@@ -35,46 +39,48 @@ CREATE TABLE `alumno` (
   PRIMARY KEY (`boleta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `horariosExamen`;
 
-CREATE TABLE `horariosExamen` (
-  `id_horario` varchar(10) NOT NULL,
-  `id_grupo` varchar(10) NOT NULL,
-  `id_laboratorio` varchar(10) NOT NULL,
-  `hora` datetime NOT NULL,
-  PRIMARY KEY (`id_horario`),
-  FOREIGN KEY (`id_laboratorio`) REFERENCES laboratorios(`id_laboratorio`),
-  FOREIGN KEY (`id_grupo`) REFERENCES grupos(`id_grupo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-DROP TABLE IF EXISTS `asignacionExamen`;
-
-CREATE TABLE `asignacionExamen` (
-  `id_Examen` varchar(10) NOT NULL,
-  `boleta` varchar(64) NOT NULL,
-  `id_horario` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_Examen`),
-  FOREIGN KEY (`boleta`) REFERENCES alumno(`boleta`),
-  FOREIGN KEY (`id_horario`) REFERENCES horariosExamen('id_horario')
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-DROP TABLE IF EXISTS `laboratorios`;
 
 CREATE TABLE `laboratorios` (
   `id_laboratorio` varchar(10) NOT NULL,
   `nombre_laboratorio` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_laboratorio`),
+  PRIMARY KEY (`id_laboratorio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `grupos`;
+
 
 CREATE TABLE `grupos` (
   `id_grupo` varchar(10) NOT NULL,
   `semestre` varchar(64) NOT NULL,
   PRIMARY KEY (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `horariosExamen` (
+  `id_horario` varchar(10) NOT NULL,
+  `id_grupo` varchar(10) NOT NULL ,
+  `id_laboratorio` varchar(10) NOT NULL,
+  `hora` datetime NOT NULL,
+  PRIMARY KEY (`id_horario`),
+  FOREIGN KEY (`id_grupo`) REFERENCES grupos(`id_grupo`),
+  FOREIGN KEY (`id_laboratorio`) REFERENCES laboratorios(`id_laboratorio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `asignacionExamen` (
+  `id_Examen` varchar(10) NOT NULL,
+  `boleta` varchar(10) NOT NULL,
+  `id_horario` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_Examen`),
+  FOREIGN KEY (`boleta`) REFERENCES alumno(`boleta`),
+  FOREIGN KEY (`id_horario`) REFERENCES horariosExamen(`id_horario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 
 /*Data for the table `laboratorios` */
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
@@ -96,7 +102,7 @@ values ('1','primero');
 insert into `grupos`(`id_grupo`,`semestre`) 
 values ('2','segundo');
 insert into `grupos`(`id_grupo`,`semestre`) 
-values ('3','tercer 3');
+values ('3','tercer');
 
 /*Data for the table `horariosExamen` */
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
