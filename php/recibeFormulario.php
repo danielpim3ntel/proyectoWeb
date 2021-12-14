@@ -11,7 +11,7 @@
     $calle = $_POST['calle'];
     $colonia = $_POST['colonia'];
     $codigop = $_POST['codigop'];
-    $tel = $_POST['tel'];
+    $tel = $_POST['telefono'];
     $correo = $_POST['correo'];
 
     $escuelaProcedencia = $_POST['escuelaProcedencia'];
@@ -19,5 +19,13 @@
     $promedio = $_POST['promedio'];
     $opcion = $_POST['opcion'];
 
-    echo $boleta;
+    $conexion = mysqli_connect("localhost","root","","baseProyecto");
+
+    if (!$conexion) {
+        echo "Error: No se pudo conectar a MySQL. Error " . mysqli_connect_errno() . " : ". mysqli_connect_error() . PHP_EOL;
+        die;
+    }
+    $sql = "INSERT INTO alumno (boleta, nombre,apeP,apeM,fechaNac,curp,correo,escuelaProcedencia,entidadProcedencia,telefono,promedio) 
+    VALUES ('{$_POST[boleta]}', '{$_POST[nombre]}', '{$_POST[apeP]}', '{$_POST[apeM]}', '{$_POST[fechaNac]}', '{$_POST[curp]}', '{$_POST[correo]}', '{$_POST[escuelaProcedencia]}', '{$_POST[entidadProcedencia]}', '{$_POST[telefono]}', '{$_POST[promedio]}');"
+
 ?>
