@@ -26,7 +26,8 @@
 
 
     <div class="container"> <br>
-        <form id="formulario" action="php/recibeFormulario.php" class="form-horizontal" method="post">
+        <!--action="php/recibeFormulario.php"-->
+        <form id="formulario" action="confirmar.php" class="container-form" method="POST" target="_blank">
             <fieldset class="border p-2">
                 <legend class="text-primary"> Identidad</legend>
 
@@ -299,15 +300,19 @@
             <br>
 
             <div class="mb-3">
-                <input class="btn btn-primary position-relative" type="submit" value="Enviar">
+                <!--onclick="location.href = 'confirmar.php';"-->
+                <input class="btn btn-primary position-relative" type="submit" value="Enviar" >
                 <input class="btn btn-dark position-relative" type="reset" value="Limpiar">
+
+                <!--button type="submit" class="btn btn-primary">Enviar</button-->
+
             </div>
 
         </form>
     </div>
     <!--/section-->
 
-    <script src="javascript/validaciones.js"></script>
+    <!--script src="javascript/validaciones.js"></script-->
 
 </body>
 
