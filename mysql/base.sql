@@ -30,16 +30,22 @@ DROP TABLE IF EXISTS `laboratorios`;
 CREATE TABLE `alumno` (
   `boleta` varchar(10) NOT NULL,
   `nombre` varchar(64) NOT NULL,
-  `apeP` varchar(64) NOT NULL,
-  `apeM` varchar(64) DEFAULT NULL,
+  `apePaterno` varchar(64) NOT NULL,
+  `apeMaterno` varchar(64) DEFAULT NULL,
   `fechaNac` date DEFAULT NULL,
+  `genero` varchar(10) NOT NULL,
   `curp` varchar(18) NOT NULL,
+  `calle` varchar(40) NOT NULL,
+  `colonia` varchar(40) NOT NULL,
+  `alcaldia` varchar(40) NOT NULL,
+  `codigop` varchar(5) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
   `correo` varchar(128) NOT NULL,
   `escuelaProcedencia` varchar(128) NOT NULL,
   `entidadProcedencia` varchar(128) NOT NULL,
-  `telefono` varchar(10) NOT NULL,
   `promedio` decimal(4,2) NOT NULL,
-  PRIMARY KEY (`boleta`)
+  `opcion` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`boleta`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -110,17 +116,10 @@ values ('G2','2023/1');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
 values ('E1','G1','Lab1','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E2','segundo');
-insert into `grupos`(`id_grupo`,`semestre`) 
-values ('E3','tercer 3');
+values ('E2','G2',`Lab1`,`21-01-05 11:45`);
 
-/*Data for the table `alumno` */
-
-insert  into `alumno`(`boleta`,`nombre`,`apeP`,`apeM`,`fechaNac`,`curp`,`correo`,`escuelaProcedencia`,`entidadProcedencia`,`telefono`,`promedio`) values 
-('PE214587963','Juan','Pérez','Pérez','1999-04-07','SOHV000921MDFLRRA5','juan@juan.com','CECYT #5 Benito Juarez Garcia','Zacatecas','5537812213','8.75');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
