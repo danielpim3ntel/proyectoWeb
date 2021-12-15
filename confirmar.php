@@ -35,7 +35,7 @@
 
 
     if($genero == "fem"){
-        $genero = "Fenenino";
+        $genero = "Femenino";
     }
     else{
         $genero = "Masculino";
