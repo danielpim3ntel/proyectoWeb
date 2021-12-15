@@ -1,7 +1,7 @@
 <?php
 
     session_start(); // Inicio de la sesión 
-    include("conexion.php");
+    include("php/conexion.php");
     $_SESSION["boleta"] = $_POST['boleta'];
     $_SESSION["nombre"] = $_POST['nombre'];
     $_SESSION["apePaterno"] = $_POST['apePaterno'];
@@ -316,10 +316,12 @@
     echo "<p>Promedio: $promedio</p>";
     echo "<p>ESCOM fue tu: $opcion</p> <br>";
     ?>
-
+    <div class="mb-3">
+        <input class="btn btn-primary position-relative" type="submit" value="Modificar" onclick="location.href = 'modificar.php';">
+    </div>
     <div class="mb-3">
         
-        <form action="recibeFormulario.php" method="post">
+        <form action="php/recibeFormulario.php" method="post">
             <input type="hidden" name="boleta" value="<?php echo $boleta; ?>">
             <input type="hidden" name="nombre" value="<?php echo $nombre; ?>">
             <input type="hidden" name="apePaterno" value="<?php echo $apePaterno; ?>">
@@ -337,10 +339,9 @@
             <input type="hidden" name="entidadProcedencia" value="<?php echo $entidadProcedencia; ?>">
             <input type="hidden" name="promedio" value="<?php echo $promedio; ?>">
             <input type="hidden" name="opcion" value="<?php echo $opcion; ?>">
-                  
 
-            <input class="btn btn-primary position-relative" type="submit" value="Modificar" onclick="location.href = 'modificar.php';">
             <input class="btn btn-dark position-relative" type="submit" value="Confirmar" name="confirmar" >
+        </form>
     </div>
 
 </body>
