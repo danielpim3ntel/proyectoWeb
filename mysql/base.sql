@@ -142,7 +142,7 @@ insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
 values ('E13','G2','Lab1','21-01-05 01:30:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
 values ('E14','G2',`Lab2`,`21-01-05 01:30:00 PM`);
-insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
+insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)  
 values ('E15','G2','Lab3','21-01-05 01:30:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
 values ('E16','G2',`Lab4`,`21-01-05 01:30:00 PM`);
