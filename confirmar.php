@@ -1,6 +1,7 @@
 <?php
 
     session_start(); // Inicio de la sesión 
+    include("conexion.php");
     $_SESSION["boleta"] = $_POST['boleta'];
     $_SESSION["nombre"] = $_POST['nombre'];
     $_SESSION["apePaterno"] = $_POST['apePaterno'];
@@ -31,6 +32,8 @@
     $apeMaterno = $_SESSION['apeMaterno'];
     $fechaNac = $_SESSION['fechaNac'];
     $genero = $_SESSION['genero'];
+
+
     if($genero == "fem"){
         $genero = "Fenenino";
     }
@@ -315,15 +318,32 @@
     ?>
 
     <div class="mb-3">
-        <input class="btn btn-primary position-relative" type="submit" value="Modificar" onclick="location.href = 'modificar.php';">
-        <input class="btn btn-dark position-relative" type="submit" value="Confirmar">
-    </div>
+        
+        <form action="recibeFormulario.php" method="post">
+            <input type="hidden" name="boleta" value="<?php echo $boleta; ?>">
+            <input type="hidden" name="nombre" value="<?php echo $nombre; ?>">
+            <input type="hidden" name="apePaterno" value="<?php echo $apePaterno; ?>">
+            <input type="hidden" name="apeMaterno" value="<?php echo $apeMaterno; ?>">
+            <input type="hidden" name="fechaNac" value="<?php echo $fechaNac; ?>">
+            <input type="hidden" name="genero" value="<?php echo $genero; ?>">
+            <input type="hidden" name="curp" value="<?php echo $curp; ?>">
+            <input type="hidden" name="calle" value="<?php echo $calle; ?>">
+            <input type="hidden" name="colonia" value="<?php echo $colonia; ?>">
+            <input type="hidden" name="alcaldia" value="<?php echo $alcaldia; ?>">
+            <input type="hidden" name="codigop" value="<?php echo $codigop; ?>">
+            <input type="hidden" name="telefono" value="<?php echo $tel; ?>">
+            <input type="hidden" name="correo" value="<?php echo $correo; ?>">
+            <input type="hidden" name="escuelaProcedencia" value="<?php echo $escuelaProcedencia; ?>">
+            <input type="hidden" name="entidadProcedencia" value="<?php echo $entidadProcedencia; ?>">
+            <input type="hidden" name="promedio" value="<?php echo $promedio; ?>">
+            <input type="hidden" name="opcion" value="<?php echo $opcion; ?>">
+                  
 
+            <input class="btn btn-primary position-relative" type="submit" value="Modificar" onclick="location.href = 'modificar.php';">
+            <input class="btn btn-dark position-relative" type="submit" value="Confirmar" name="confirmar" >
+    </div>
 
 </body>
 
 </html>
-
-
-
 
