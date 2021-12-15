@@ -44,7 +44,7 @@ CREATE TABLE `alumno` (
   `escuelaProcedencia` varchar(128) NOT NULL,
   `entidadProcedencia` varchar(128) NOT NULL,
   `promedio` decimal(4,2) NOT NULL,
-  `opcion` varchar(30) DEFAULT NULL,
+  `opcion` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`boleta`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
