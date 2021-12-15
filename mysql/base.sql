@@ -48,9 +48,6 @@ CREATE TABLE `alumno` (
   PRIMARY KEY (`boleta`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-$sql = "INSERT INTO alumno (boleta,nombre,apePaterno,apeMaterno,fechaNac,genero,curp,calle,colonia,alcaldia,codigop,telefono,correo,escuelaProcedencia,entidadProcedencia,promedio,opcion) 
-VALUES ('$first_name', '$last_name', '$email')";
-
 CREATE TABLE `laboratorios` (
   `id_laboratorio` varchar(10) NOT NULL,
   `nombre_laboratorio` varchar(64) NOT NULL,
