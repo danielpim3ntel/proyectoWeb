@@ -48,7 +48,8 @@ CREATE TABLE `alumno` (
   PRIMARY KEY (`boleta`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+$sql = "INSERT INTO alumno (boleta,nombre,apePaterno,apeMaterno,fechaNac,genero,curp,calle,colonia,alcaldia,codigop,telefono,correo,escuelaProcedencia,entidadProcedencia,promedio,opcion) 
+VALUES ('$first_name', '$last_name', '$email')";
 
 CREATE TABLE `laboratorios` (
   `id_laboratorio` varchar(10) NOT NULL,
@@ -116,10 +117,15 @@ values ('G2','2023/1');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
 values ('E1','G1','Lab1','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E2','G2',`Lab1`,`21-01-05 11:45`);
+values ('E2','segundo',`Lab1`,`21-01-05 11:45`);
+
+
+/*Data for the table `alumno` */
+
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
