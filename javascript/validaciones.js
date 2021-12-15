@@ -91,6 +91,8 @@ const validarFormulario = (e) => {
         case "promedio":
             validarCampo(expresiones.promedio, e.target, 'promedio');
             break;
+        default:
+            break;
     }
 }
 
@@ -149,7 +151,7 @@ const validarFormSelect = (select, input, campo) => {
         campos[campo] = true;
         select[0].classList.remove('is-invalid');
         document.querySelector(`#grupo-control-${campo} .formulario-input-error`).classList.remove('formulario-input-error-ver');
-
+        campos['escuelaProcedenciaOtro'] = true;
     }
     else {
         campos[campo] = false;
@@ -160,7 +162,7 @@ const validarFormSelect = (select, input, campo) => {
     if (select[0].value == "Otro") {
         document.querySelector(`#grupo-control-${campo} input`).style.display = 'block';
         //document.querySelector(`#grupo-control-${campo} input`).addEventListener('keyup', validarOtro);
-
+        campos['escuelaProcedenciaOtro'] = false;
     }
 }
 
@@ -206,15 +208,17 @@ function checador() {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(campos.boleta);
-    if (checador == true) {
+    console.log(campos.escuelaProcedenciaOtro);
+    console.log(checador());
+    if (checador() == true) {
         console.log('cumple');
+        formulario.submit();
     }
     else {
         validarFormularioF();
         console.log('noCumple');
     }
-    return true;
+    
 });
 
 
@@ -223,7 +227,7 @@ function validarFormularioF() {
     validarCampo(expresiones.nombre, document.getElementsByName('nombre')[0], 'nombre');
     validarCampo(expresiones.apePaterno, document.getElementsByName('apePaterno')[0], 'apePaterno');
     validarCampo(expresiones.apeMaterno, document.getElementsByName('apeMaterno')[0], 'apeMaterno');
-    validarCampo(expresiones.fechaNac, document.getElementsByName('fechaNac')[0], 'fechaNac');
+    //validarCampo(expresiones.fechaNac, document.getElementsByName('fechaNac')[0], 'fechaNac');
     validarFormCheck(expresiones.genero, document.getElementsByName('genero'), 'genero');
     validarCampo(expresiones.curp, document.getElementsByName('curp')[0], 'curp');
     validarCampo(expresiones.calle, document.getElementsByName('calle')[0], 'calle');
@@ -243,8 +247,6 @@ function validarFormularioF() {
 /*function validarBoleta() {
     var boleta = document.getElementById('boleta');
     var filtro = /^([PE|PP][0-9])|[0-9]$/;
-
-
     if (!filtro.test(boleta.value)) {
         alert('Por favor, ingresa tu boleta PE o PP y si vienes de vocacional ingresa tu boleta.');
         boleta.focus;
@@ -258,11 +260,9 @@ function validarFormularioF() {
         else
             alert('Recuerda que la boleta es de solo 10 dígitos.');     
 }
-
 function validarNombre() {
     var nombre = document.getElementById('nombre');
     var filtro = /[A-Z][a-z]+/;
-
     if (!filtro.test(nombre.value)) {
         alert('El nombre debe comenzar por mayúsculas y contener unicamente letras');
         nombre.focus;
@@ -270,11 +270,9 @@ function validarNombre() {
     }
     //return true;    
 }
-
 function validarApeP() {
     var apePaterno = document.getElementById('apePaterno');
     var filtro = /[A-Z][a-z]+/;
-
     if (!filtro.test(apePaterno.value)) {
         alert('El apellido paterno debe comenzar por mayúsculas y contener unicamente letras');
         apePaterno.focus;
@@ -282,11 +280,9 @@ function validarApeP() {
     }
    //return true;    
 }
-
 function validarApeM() {
     var apeMaterno = document.getElementById('apeMaterno');
     var filtro = /[A-Z][a-z]+/;
-
     if (!filtro.test(apeMaterno.value)) {
         alert('El apellido materno debe comenzar por mayúsculas y contener unicamente letras');
         apeMaterno.focus;
@@ -298,7 +294,6 @@ function validarApeM() {
  /*function validarNacFecha() {
     var nacFecha = document.getElementById('fechaNac');
     //var filtro = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/((1[0-9][0-9][0-9])|20(0[0-9]|1[0-9]|21))$/;
-
     if (!filtro.test(nacFecha.value)) {
         alert('Fecha de Nacimiento incorrecta. El formato de la fecha de nacimiento es dd/mm/yyyy');
         nacFecha.focus;
@@ -327,7 +322,6 @@ function validarGenero(){
         return false;
     }
 }
-
 function validarCurp() {
     var curp = document.getElementById('curp');
     var filtro = /^[A-Z][A-Z][A-Z][A-Z][0-9][0-9](0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[01])[H|M](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z][A-Z][A-Z]([0-9]|[A-Z])[0-9]$/;//[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)
@@ -340,12 +334,9 @@ function validarCurp() {
         alert('Curp válida');
         return true;    
 }
-
-
 function validarCalle() {
     var calle = document.getElementById('calle');
     var filtro = /^[0-9a-zA-Z\s]+$/;
-
     if (!filtro.test(calle.value)) {
         alert('Por favor, ingresa una direccion valida');
         calle.focus;
@@ -355,11 +346,9 @@ function validarCalle() {
         alert('Direccion correcta');
         return true;
 }
-
 function validarColonia() {
     var colonia = document.getElementById('colonia');
     var filtro = /^[a-zA-Z\s]+$/;
-
     if (!filtro.test(colonia.value)) {
         alert('Por favor, ingresa una direccion valida');
         colonia.focus;
@@ -369,11 +358,9 @@ function validarColonia() {
         alert('Direccion correcta');
         return true;
 }
-
 function validarCodigoP() {
     var codigop = document.getElementById('codigop');
     var filtro = /^([0-9])+$/;
-
     if (!filtro.test(codigop.value)) {
         alert('Por favor, ingresa un código postal válido');
         codigop.focus;
@@ -383,13 +370,9 @@ function validarCodigoP() {
         alert('Código Postal correcto');
         return true;
 }
-
-
-
 function validarCorreo() {
     var correo = document.getElementById('correo');
     var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
     if (!filtro.test(correo.value)) {
         alert('Por favor, ingresa un correo válido');
         correo.focus;
@@ -399,11 +382,9 @@ function validarCorreo() {
         alert('Direccion de correo correcta');
         return true;
 }
-
 function validarPromedio() {
     var promedio = document.getElementById('promedio');
     var filtro = /^([6-9].[0-9][0-9]|[6-9]|10)$/;
-
     if (!filtro.test(promedio.value)) {
         alert('El promedio solo puede contener 2 decimales');
         promedio.focus;
@@ -413,11 +394,9 @@ function validarPromedio() {
         alert('Promedio válido');
         return true;
 }
-
 function validarTelefono() {
     var telefono = document.getElementById('telefono');
     var filtro = /^[0-9]{10}$/;
-
     if (!filtro.test(telefono.value)) {
         alert('El teléfono o celular debe ser de 10 dígitos.');
         promedio.focus;
@@ -427,8 +406,6 @@ function validarTelefono() {
         alert('Teléfono válido');
         return true;
 }
-
-
 function validarFormulario(){
     validarBoleta(); 
     validarNombre(); 
