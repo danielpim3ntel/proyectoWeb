@@ -300,7 +300,7 @@
                     </div>
 
                     <div class="col-auto mb-1" id="grupo-control-nombre">
-                        <input class="form-control" id="form-control-nombre" type="text" id="nombre" name="nombre" value = <?php echo $nombre ?>
+                        <input class="form-control" id="form-control-nombre" type="text" id="nombre" name="nombre" value = "<?php echo $nombre ?>"
                             placeholder="Nombre(s)" maxlength="20" size="20">
                         <div class="formulario-input-error">Inicie con Mayuscula. Ej. Daniel</div>
                     </div>
