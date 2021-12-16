@@ -396,7 +396,7 @@
                         <label for="dir3" class="col-sm-2 col-form-label">Alcald&iacute;a: </label>
                     </div>
                     <div class="col-auto mb-3" id="grupo-control-alcaldia">
-                        <select class="form-select" id="dir3" name="alcaldia" value = <?php echo $alcaldia ?>>
+                        <select class="form-select" id="dir3" name="alcaldia">
                             <option value="" disabled>-Seleccione uno-</option>
                             <option selected value = <?php echo $_SESSION["alcaldia"] ?> > <?php echo $alcaldia ?> </option>         <!--Arreglar><-->
                             <option value="alvaro">&Aacute;lvaro Obreg&oacute;n</option>
@@ -463,7 +463,7 @@
                         </label>
                     </div>
                     <div class="col-auto mb-3">
-                        <select class="form-select" id="escuelaProcedencia" name="escuelaProcedencia" value = <?php echo $escuelaProcedencia ?>>
+                        <select class="form-select" id="escuelaProcedencia" name="escuelaProcedencia">
                             <option value="" disabled>--Elija una opción--</option>
                             <option selected value = <?php echo $_SESSION["escuelaProcedencia"] ?> > <?php echo $escuelaProcedencia ?> </option>   <!--Arreglar><-->
                             <option value="Cecyt_1">CECyT #1 “González Vázquez Vega”</option>
