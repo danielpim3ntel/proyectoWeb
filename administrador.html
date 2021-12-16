@@ -37,7 +37,7 @@
             <td>Opción</td>
         </tr>
         <?php
-            $conexion = mysqli_connect("localhost:33065", "root", "", "baseproyecto");
+            $conexion = mysqli_connect("localhost", "root", "", "baseProyecto");
             $sql = "SELECT * FROM `alumno`;";
             $result = mysqli_query($conexion,$sql);
 
@@ -45,7 +45,7 @@
         ?>
         <tr>
             <td><?php echo $mostrar['boleta'] ?></td>
-            <td><?php echo $mostrar['boleta'] ?></td>
+            <td><?php echo $mostrar['nombre'] ?></td>
             <td></td>
             <td></td>
             <td></td>

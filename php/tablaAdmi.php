@@ -20,7 +20,7 @@
 		</tr>";
 }
 echo "</table>";*/
-	$conexion = mysqli_connect("localhost:33065", "root", "", "baseproyecto");
+	$conexion = mysqli_connect("localhost", "root", "", "baseProyecto");
 	$sql = "SELECT * FROM alumno";
 	$result = mysqli_query($conexion,$sql);
 	echo "
