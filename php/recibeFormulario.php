@@ -1,4 +1,3 @@
-
 <?php
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -60,6 +59,244 @@ if(mysqli_query($conexion, $sql)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
 }
  
+$datos = "SELECT * FROM alumno";
+$resultado = mysqli_query($conexion,$datos);
+$numFilasResultado = mysqli_num_rows($resultado);
+if($numFilasResultado <= 10){
+    echo "Tienes $numFilasResultado registros en la tabla alumno";
+    
+}
+
+$examen = "SELECT * FROM asignacionExamen";
+$resultado2 = mysqli_query($conexion,$examen);
+$numFilasExamen = mysqli_num_rows($resultado2);
+if($numFilasExamen < 25){
+    echo "Tienes $numFilasExamen registros en la tabla asignacionExamen";
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario) 
+    VALUES ('$boleta','H1')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <50 && $numFilasExamen >=25){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H2')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <75 && $numFilasExamen >=50){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H3')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <100 && $numFilasExamen >=75){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H4')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <125 && $numFilasExamen >=100){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H5')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <150 && $numFilasExamen >=125){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H6')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <175 && $numFilasExamen >=150){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H6')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <200 && $numFilasExamen >=175){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H7')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <225 && $numFilasExamen >=200){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H8')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <250 && $numFilasExamen >=225){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H9')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <275 && $numFilasExamen >=250){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H10')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <300 && $numFilasExamen >=275){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H11')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <325 && $numFilasExamen >=300){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H12')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <350 && $numFilasExamen >=325){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H13')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <375 && $numFilasExamen >=350){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H14')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <400 && $numFilasExamen >=375){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H15')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <425 && $numFilasExamen >=400){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H16')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <450 && $numFilasExamen >=425){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H17')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <475 && $numFilasExamen >=450){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H18')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <500 && $numFilasExamen >=475){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H19')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <525 && $numFilasExamen >=500){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H20')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <550 && $numFilasExamen >=525){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H21')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <575 && $numFilasExamen >=550){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H22')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <600 && $numFilasExamen >=575){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H23')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+else if($numFilasExamen <625 && $numFilasExamen >=600){
+    $sql2= "INSERT INTO asignacionExamen(boleta,id_horario)
+    VALUES ('$boleta','H24')";
+    if(mysqli_query($conexion, $sql2)){
+        echo "Horario asignado.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conexion);
+    }
+}
+
 // Close connection
 mysqli_close($conexion);
 ?>
