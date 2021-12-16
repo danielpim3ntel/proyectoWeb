@@ -321,7 +321,7 @@
                         <label for="fechaNac" class="col-form-label">Fecha de Nacimiento:</label>
                     </div>
                     <div class="col-auto" id="grupo-control-fechaNac">                               <!--Arreglar><-->
-                        <input class="form-control" type="date" id="fechaNac" name="fechaNac" data-date-format="DD/MM/YYYY"> value = <?php echo $fechaNac ?>
+                        <input class="form-control" type="date" id="fechaNac" name="fechaNac" data-date-format="DD/MM/YYYY"  value = <?php echo $fechaNac ?>>
                         <div class="formulario-input-error">Indique una fecha</div>
                     </div>
                 </div>
@@ -333,11 +333,23 @@
 
                     <div class="col-auto mt-2" id="grupo-control-genero" value = <?php echo $genero ?>>  <!--Arreglar><-->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="genero" id="fem">
+                            <input class="form-check-input" type="radio" name="genero" 
+                                   
+                            <?php   if($_SESSION["genero"] == "fem") { ?>
+                                 checked 
+                            <?php } ?>
+
+                            value = "fem" >
                             <label class="form-check-label" for="fem">Femenino</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="genero" id="mas">
+                            <input class="form-check-input" type="radio" name="genero"
+                                   
+                            <?php   if($_SESSION["genero"] == "mas") { ?>
+                                 checked 
+                            <?php } ?>
+                            
+                            value = "mas" >
                             <label class="form-check-label" for="mas">Masculino</label>
                         </div>
                         <div class="formulario-input-error">Seleccione una opcion</div>
@@ -386,7 +398,7 @@
                     <div class="col-auto mb-3" id="grupo-control-alcaldia">
                         <select class="form-select" id="dir3" name="alcaldia" value = <?php echo $alcaldia ?>>
                             <option value="" disabled>-Seleccione uno-</option>
-                            <option selected> <?php echo $alcaldia ?> </option>         <!--Arreglar><-->
+                            <option selected value = <?php echo $_SESSION["alcaldia"] ?> > <?php echo $alcaldia ?> </option>         <!--Arreglar><-->
                             <option value="alvaro">&Aacute;lvaro Obreg&oacute;n</option>
                             <option value="azcapotzalco">Azcapotzalco</option>
                             <option value="benito">Benito Ju&aacute;rez</option>
@@ -453,7 +465,7 @@
                     <div class="col-auto mb-3">
                         <select class="form-select" id="escuelaProcedencia" name="escuelaProcedencia" value = <?php echo $escuelaProcedencia ?>>
                             <option value="" disabled>--Elija una opción--</option>
-                            <option selected> <?php echo $escuelaProcedencia ?> </option>   <!--Arreglar><-->
+                            <option selected value = <?php echo $_SESSION["escuelaProcedencia"] ?> > <?php echo $escuelaProcedencia ?> </option>   <!--Arreglar><-->
                             <option value="Cecyt_1">CECyT #1 “González Vázquez Vega”</option>
                             <option value="Cecyt_2">CECyT #2 "Miguel Bernard"</option>
                             <option value="Cecyt_3">CECyT #3 "Estanislao Ramírez Ruiz"</option>
@@ -491,7 +503,7 @@
                     <div class="col-auto" id="grupo-control-entidadProcedencia">
                         <select class="form-select" id="entidadProcedencia" name="entidadProcedencia">
                             <option value="" disabled>-- Selecciona uno --</option>
-                            <option selected> <?php echo $entidadProcedencia ?> </option>        <!--Arreglar><-->
+                            <option selected value = <?php echo $_SESSION["entidadProcedencia"] ?>> <?php echo $entidadProcedencia ?> </option>         <!--Arreglar><-->
                             <option value="agu"> Aguascalientes </option>
                             <option value="bcn"> Baja California </option>
                             <option value="bcs"> Baja California Sur </option>
@@ -542,7 +554,8 @@
                         <label class="col-form-label" for="n_opcion">ESCOM fue tu:</label>
                     </div>
                     <div class="col-auto">
-                        <select class="form-select" id="n_opcion" name="opcion" value = <?php echo $opcion ?>>
+                        <select class="form-select" id="n_opcion" name="opcion">
+                            <option selected value = <?php echo $_SESSION["opcion"] ?> > <?php echo $opcion ?> </option> <!--Arreglar><-->
                             <option value="1opcion">1ra opción</option>
                             <option value="2opcion">2da opción</option>
                             <option value="3opcion">3ra opción</option>
