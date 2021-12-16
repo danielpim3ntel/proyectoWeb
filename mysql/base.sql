@@ -50,7 +50,7 @@ CREATE TABLE `alumno` (
 
 
 CREATE TABLE `laboratorios` (
-  `id_laboratorio` varchar(10) NOT NULL,
+  `id_laboratorio` varchar(2) NOT NULL,
   `nombre_laboratorio` varchar(64) NOT NULL,
   PRIMARY KEY (`id_laboratorio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -58,17 +58,17 @@ CREATE TABLE `laboratorios` (
 
 
 CREATE TABLE `grupos` (
-  `id_grupo` varchar(10) NOT NULL,
-  `semestre` varchar(64) NOT NULL,
+  `id_grupo` varchar(2) NOT NULL,
+  `grupo` varchar(64) NOT NULL,
   PRIMARY KEY (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
 CREATE TABLE `horariosExamen` (
-  `id_horario` varchar(10) NOT NULL,
-  `id_grupo` varchar(10) NOT NULL ,
-  `id_laboratorio` varchar(10) NOT NULL,
+  `id_horario` varchar(3) NOT NULL,
+  `id_grupo` varchar(2) NOT NULL ,
+  `id_laboratorio` varchar(2) NOT NULL,
   `hora` datetime NOT NULL,
   PRIMARY KEY (`id_horario`),
   FOREIGN KEY (`id_grupo`) REFERENCES grupos(`id_grupo`),
@@ -79,9 +79,9 @@ CREATE TABLE `horariosExamen` (
 
 
 CREATE TABLE `asignacionExamen` (
-  `id_Examen` varchar(10) NOT NULL,
+  `id_Examen`  INT NOT NULL AUTO_INCREMENT,
   `boleta` varchar(10) NOT NULL,
-  `id_horario` varchar(10) NOT NULL,
+  `id_horario` varchar(3) NOT NULL,
   PRIMARY KEY (`id_Examen`),
   FOREIGN KEY (`boleta`) REFERENCES alumno(`boleta`),
   FOREIGN KEY (`id_horario`) REFERENCES horariosExamen(`id_horario`)
@@ -90,88 +90,92 @@ CREATE TABLE `asignacionExamen` (
 
 
 
-/*Data for the table `laboratorios` */
+/*Data for the table `laboratorios` ESTA SE QUEDA ESTATICA */
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab1','Computacion 1');
+values ('L1','Laboratorio Computacion 1');
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab2','Computacion 2');
+values ('L2','Laboratorio Computacion 2');
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab3','Computacion 3');
+values ('L3','Laboratorio Computacion 3');
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab4','Computacion 4');
+values ('L4','Laboratorio Computacion 4');
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab5','Computacion 5');
+values ('L5','Laboratorio Computacion 5');
 insert into `laboratorios`(`id_laboratorio`,`nombre_laboratorio`) 
-values ('Lab6','Computacion 6');
+values ('L6','Laboratorio Computacion 6');
 
-/*Data for the table `grupos` */
-insert into `grupos`(`id_grupo`,`semestre`) 
-values ('G1','2022/2');
-insert into `grupos`(`id_grupo`,`semestre`) 
-values ('G2','2023/1');
+/*Data for the table `grupos` ESTA SE QUEDA ESTATICA */
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G1','Grupo 01');
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G2','Grupo 02');
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G3','Grupo 03');
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G4','Grupo 04');
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G5','Grupo 05');
+insert into `grupos`(`id_grupo`,`grupo`) 
+values ('G6','Grupo 06');
 
 
 /*Data for the table `horariosExamen` */
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E1','G1','Lab1','21-01-05 10:00:00 AM');
+values ('H1','G1','L1','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E2','G1',`Lab2`,`21-01-05 10:00:00 AM`);
+values ('H2','G2','L2','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E3','G1','Lab3','21-01-05 10:00:00 AM');
+values ('H3','G3','L3','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E4','G1',`Lab4`,`21-01-05 10:00:00 AM`);
+values ('H4','G4','L4','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E5','G1','Lab5','21-01-05 10:00:00 AM');
+values ('H5','G5','L5','21-01-05 10:00:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E6','G1',`Lab6`,`21-01-05 10:00:00 AM`);
+values ('H6','G6','L6','21-01-05 10:00:00 AM');
 
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E7','G1','Lab1','21-01-05 11:45:00 AM');
+values ('H7','G1','L1','21-01-05 11:45:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E8','G1',`Lab2`,`21-01-05 11:45:00 AM`);
+values ('H8','G2','L2','21-01-05 11:45:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E9','G1','Lab3','21-01-05 11:45:00 AM');
+values ('H9','G3','L3','21-01-05 11:45:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E10','G1',`Lab4`,`21-01-05 11:45:00 AM`);
+values ('H10','G4','L4','21-01-05 11:45:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E11','G1','Lab5','21-01-05 11:45:00 AM');
+values ('H11','G5','L5','21-01-05 11:45:00 AM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E12','G1',`Lab6`,`21-01-05 11:45:00 AM`);
+values ('H12','G6','L6','21-01-05 11:45:00 AM');
 
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E13','G2','Lab1','21-01-05 01:30:00 PM');
+values ('H13','G1','L1','21-01-05 01:30:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E14','G2',`Lab2`,`21-01-05 01:30:00 PM`);
-insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)  
-values ('E15','G2','Lab3','21-01-05 01:30:00 PM');
-insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E16','G2',`Lab4`,`21-01-05 01:30:00 PM`);
+values ('H14','G2','L2','21-01-05 01:30:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E17','G2','Lab5','21-01-05 01:30:00 PM');
+values ('H15','G3','L3','21-01-05 01:30:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E18','G2',`Lab6`,`21-01-05 01:30:00 PM`);
+values ('H16','G4','L4','21-01-05 01:30:00 PM');
+insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
+values ('H17','G5','L5','21-01-05 01:30:00 PM');
+insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
+values ('H18','G6','L6','21-01-05 01:30:00 PM');
 
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E19','G2','Lab1','21-01-05 03:15:00 PM');
+values ('H19','G1','L1','21-01-05 03:15:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E20','G2',`Lab2`,`21-01-05 03:15:00 PM`);
+values ('H20','G2','L2','21-01-05 03:15:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E21','G2','Lab3','21-01-05 03:15:00 PM');
+values ('H21','G3','L3','21-01-05 03:15:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E22','G2',`Lab4`,`21-01-05 03:15:00 PM`);
+values ('H22','G4','L4','21-01-05 03:15:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`) 
-values ('E23','G2','Lab5','21-01-05 03:15:00 PM');
+values ('H23','G5','L5','21-01-05 03:15:00 PM');
 insert into `horariosExamen`(`id_horario`,`id_grupo`,`id_laboratorio`,`hora`)
-values ('E24','G2',`Lab6`,`21-01-05 03:15:00 PM`);
+values ('H24','G6','L6','21-01-05 03:15:00 PM');
 
 /*Data for the table `alumno` */
-
-
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
 
 
