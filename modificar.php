@@ -278,7 +278,7 @@
 
 
     <div class="container"> <br>
-        <form id="formulario"  class="form-horizontal" method="POST">
+        <form id="formulario" action = "confirmar.php" class="form-horizontal" method="POST">
             <fieldset class="border p-2">
                 <legend class="text-primary"> Identidad</legend>
 
