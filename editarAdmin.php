@@ -17,7 +17,7 @@
     </div>
     <?php 
         $conexion = mysqli_connect("localhost", "root", "", "baseProyecto");
-        $boleta=($_GET['boleta']);
+        $boleta= mysqli_real_escape_string($conexion, $_REQUEST['boleta']);
         $sql = sprintf("SELECT * FROM alumno WHERE boleta = $boleta");
         $result = mysqli_query($conexion,$sql);
 
@@ -260,7 +260,7 @@
     $opcion = $mostrar['opcion'];
     ?> 
         <div class="container"> <br>
-        <form id="formulario" action = "confirmar.php" class="form-horizontal">
+        <form id="formulario" action = "confirmarEdit.php" class="form-horizontal" method="post">
             <fieldset class="border p-2">
                 <legend class="text-primary"> Identidad</legend>
 
@@ -270,8 +270,9 @@
                     </div>
 
                     <div class="col-auto" id="grupo-control-boleta">
-                        <input class="form-control" type="text" id="boleta" name="boleta" maxlength="10" size="10" value = <?php echo $boleta ?>
-                            placeholder="20XXXXXXXX">
+                     <label class="form-control_label" id="boleta" name="boleta"><?php echo $boleta;?></label>
+                     <input class="form-control" type="hidden" id="boleta" name="boleta"maxlength="10" size="10"
+                            placeholder="20XXXXXXXX" value = <?php echo $boleta ?>>
                         <div class="formulario-input-error">Evite simbolos @*/...</div>
                     </div>
                 </div>
@@ -282,7 +283,7 @@
                     </div>
 
                     <div class="col-auto mb-1" id="grupo-control-nombre">
-                        <input class="form-control" id="form-control-nombre" type="text" id="nombre" name="nombre" value = "<?php echo $nombre ?>"
+                        <input class="form-control" id="form-control-nombre" type="text" id="nombre" name="nombre" value = <?php echo $nombre ?>
                             placeholder="Nombre(s)" maxlength="20" size="20">
                         <div class="formulario-input-error">Inicie con Mayuscula. Ej. Daniel</div>
                     </div>
@@ -553,9 +554,10 @@
                 <input class="btn btn-primary position-relative" type="submit" value="Enviar">
                 <input class="btn btn-dark position-relative" type="reset" value="Limpiar">
             </div>
-<?php } ?>
+            <?php } 
+            ?>
         </form>
     </div>
-    <script src="javascript/validaciones.js"></script>
+    <script src="javascript/validacionesAdmin.js"></script>
 </body>
 </html>
