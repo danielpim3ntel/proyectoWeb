@@ -55,6 +55,7 @@ VALUES ('$boleta', '$nombre', '$apePaterno', '$apeMaterno', '$fechaNac', '$gener
 '$telefono', '$correo', '$escuelaProcedencia', '$entidadProcedencia', '$promedio','$opcion')";
 if(mysqli_query($conexion, $sql)){
    // echo "Records added successfully.";
+  /*******************************************Registro existoso*****************************************************************************/ 
    ?>
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
