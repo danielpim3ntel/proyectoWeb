@@ -81,20 +81,20 @@ if(mysqli_query($conexion, $sql)){
                 <h1>REGISTRO DE DATOS GENERALES</h1>
                 <h2>Alumnos de Nuevo Ingreso</h2>
                 <h2>(Enero 2022)</h2>
-                <h2>Registro exitoso de <?php echo $nombre." ".$apePaterno." ".$apeMaterno ?> </h2>
+                <h2>Modificación exitosa de <?php echo $nombre." ".$apePaterno." ".$apeMaterno ?> </h2>
             </div>
         </div>
 
-        <div class="mb-3">
+        <!--div class="mb-3">
             <form action="correo.php" method="post">
                 <input type="hidden" name="boleta" value="<?php echo $boleta; ?>">
                 <input class="btn btn-primary position-center" type="submit" value="Enviar pdf a mi correo" name="confirmar" >
             </form>
-        </div>
+        </div-->
 
 
         <div class="mb-3">
-                <input class="btn btn-primary position-center" type="submit" value="Volver al formulario" onclick="location.href = '../index.html';">
+                <input class="btn btn-primary position-center" type="submit" value="Volver al menú Administrador" onclick="location.href = '../administrador.php';">
         </div>
 
     </body>
@@ -137,12 +137,12 @@ if(mysqli_query($conexion, $sql)){
                 <h1>REGISTRO DE DATOS GENERALES</h1>
                 <h2>Alumnos de Nuevo Ingreso</h2>
                 <h2>(Enero 2022)</h2>
-                <h2>ERROR EN EL REGISTRO</h2>
+                <h2>ERROR AL EDITAR</h2>
             </div>
         </div>
 
         <div class="mb-3">
-            <input class="btn btn-primary position-center" type="submit" value="Volver al formulario" onclick="location.href = '../index.html';">
+            <input class="btn btn-primary position-center" type="submit" value="Volver al menu Administrador" onclick="location.href = '../administrador.php';">
         </div>
 
     </body>
