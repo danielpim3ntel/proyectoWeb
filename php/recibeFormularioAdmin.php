@@ -50,7 +50,9 @@ $promedio = mysqli_real_escape_string($conexion, $_REQUEST['promedio']);
 $opcion = mysqli_real_escape_string($conexion, $_REQUEST['opcion']);
  
 // Attempt insert query execution
-$sql = "UPDATE alumno SET boleta = '$boleta', nombre = '$nombre', apePaterno = '$apePaterno',apeMaterno = '$apeMaterno' ,fechaNac = '$fechaNac',genero = '$genero',curp = '$curp',calle = '$calle',colonia = '$colonia',alcaldia = '$alcaldia',codigop = '$codigop',telefono = '$telefono' ,correo ='$correo',escuelaProcedencia =  '$escuelaProcedencia',entidadProcedencia = '$entidadProcedencia',promedio = '$promedio',opcion = '$opcion' ";
+$sql = "UPDATE alumno SET nombre = '$nombre', apePaterno = '$apePaterno',apeMaterno = '$apeMaterno' ,fechaNac = '$fechaNac',genero = '$genero',
+curp = '$curp',calle = '$calle',colonia = '$colonia',alcaldia = '$alcaldia',codigop = '$codigop',telefono = '$telefono' ,correo ='$correo',escuelaProcedencia =  '$escuelaProcedencia',
+entidadProcedencia = '$entidadProcedencia',promedio = '$promedio',opcion = '$opcion' WHERE boleta = '$boleta' ";
 if(mysqli_query($conexion, $sql)){
     echo "Records added successfully.";
 } else{
